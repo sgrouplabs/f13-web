@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F13 LLC — Houston General Contractor | Attic, Fence &amp; Concrete Experts</title>
+  <meta name="description" content="Houston's trusted general contractor for attic flooring, fence staining, and small concrete work. Serving Katy, Cypress, Spring, and Pearland. Free estimates available.">
+  <meta name="keywords" content="Houston contractor, attic flooring Katy TX, fence staining Houston, concrete contractor Cypress, home upgrades Houston TX">
+  <meta name="author" content="F13 LLC">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="F13 LLC — Houston General Contractor">
+  <meta property="og:description" content="Expert craftsmanship for Houston homes. Attic flooring, fence staining, and small concrete work. Free estimates.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            navy: { 700: '#1e3a5f', 800: '#1a3354', 900: '#0f2342', 950: '#0a1a33' },
+            amber: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-800 antialiased bg-white">
+
+  <!-- ═══════════════════════════════════════
+       STICKY HEADER / NAVIGATION
+  ═══════════════════════════════════════ -->
+  <header id="site-header" class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+
+        <!-- Logo / Brand -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center shadow-md group-hover:bg-navy-700 transition-colors">
+            <span class="text-white font-extrabold text-lg tracking-tight">F13</span>
+          </div>
+          <div class="hidden sm:block">
+            <p class="text-navy-900 font-bold text-lg leading-none">F13 LLC</p>
+            <p class="text-gray-400 text-[10px] uppercase tracking-widest leading-none mt-0.5">Houston, TX</p>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#services" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Services</a>
+          <a href="#gallery" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Gallery</a>
+          <a href="#why-us" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Why Us</a>
+          <a href="#quote" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Get Quote</a>
+        </nav>
+
+        <!-- CTA Group -->
+        <div class="flex items-center gap-3">
+          <!-- Click-to-call on all sizes -->
+          <a href="tel:+12815550199" class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm px-4 py-2.5 rounded-lg shadow-md transition-all hover:shadow-lg hover:-translate-y-px">
+            <i class="fa-solid fa-phone text-xs"></i>
+            <span class="hidden sm:inline">Call Now</span>
+          </a>
+          <!-- Mobile menu toggle -->
+          <button id="mobile-menu-btn" class="lg:hidden text-navy-900 text-xl p-2 rounded-lg hover:bg-gray-100 transition" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+        <a href="#services" class="block text-gray-700 hover:text-navy-900 font-medium py-2 border-b border-gray-50">Services</a>
+        <a href="#gallery" class="block text-gray-700 hover:text-navy-900 font-medium py-2 border-b border-gray-50">Gallery</a>
+        <a href="#why-us" class="block text-gray-700 hover:text-navy-900 font-medium py-2 border-b border-gray-50">Why Us</a>
+        <a href="#quote" class="block text-gray-700 hover:text-navy-900 font-medium py-2">Get Free Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════ -->
+  <section id="hero" class="relative bg-navy-900 text-white overflow-hidden">
+    <!-- Background image placeholder -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+         style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80');">
+    </div>
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/70 to-transparent"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 flex flex-col lg:flex-row items-center gap-12">
+      <!-- Left: Copy -->
+      <div class="lg:w-7/12 flex-shrink-0">
+        <div class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+          <span class="text-amber-300 text-xs font-semibold uppercase tracking-wider">Serving Greater Houston</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          Elevating Houston Homes<br>
+          <span class="text-amber-400">from the Attic</span> to the<br class="hidden sm:block">
+          <span class="text-blue-300">Driveway.</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-blue-100 mb-8 leading-relaxed max-w-xl">
+          Trusted general contracting and specialized upgrades servicing Houston, Katy, Cypress, Spring, and Pearland.
+        </p>
+        <p class="text-blue-200/80 text-base mb-10">
+          Expert craftsmanship for the spaces that matter most.<br>
+          <strong class="text-white">Get your free, no-obligation estimate today.</strong>
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-px transition-all">
+            <i class="fa-solid fa-bolt"></i>
+            Get Instant Quote
+          </a>
+          <a href="tel:+12815550199" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold text-base px-6 py-4 rounded-xl transition-all">
+            <i class="fa-solid fa-phone"></i>
+            (281) 555-0199
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Quote Form Card -->
+      <div class="lg:w-5/12 w-full flex-shrink-0">
+        <div class="bg-white text-gray-800 rounded-2xl shadow-2xl p-6 sm:p-8" id="quote-form-card">
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Request a Free Estimate</h3>
+          <p class="text-gray-500 text-sm mb-6">We typically respond within 2 hours.</p>
+
+          <form id="quote-form" class="space-y-4" novalidate>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Smith"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(281) 555-0100"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="you@email.com"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1" for="service">Service Needed *</label>
+              <select id="service" name="service" required
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                <option value="">Select a service…</option>
+                <option>Attic Flooring</option>
+                <option>Fence Staining</option>
+                <option>Small Concrete Work</option>
+                <option>Multiple / Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1" for="details">Project Details</label>
+              <textarea id="details" name="details" rows="3" placeholder="Tell us about your project…"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition resize-none"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1" for="zip">ZIP Code *</label>
+              <input type="text" id="zip" name="zip" required placeholder="77001" maxlength="5" pattern="[0-9]{5}"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+            </div>
+
+            <div id="form-error" class="hidden text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-2.5"></div>
+
+            <button type="submit" id="submit-btn"
+              class="w-full bg-amber-500 hover:bg-amber-600 disabled:bg-amber-300 text-white font-bold text-base py-4 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              Send Quote Request
+            </button>
+            <p class="text-center text-gray-400 text-xs">No obligation. No spam. Your info stays private.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TRUST STRIP (logos / stats)
+  ═══════════════════════════════════════ -->
+  <section class="bg-gray-50 border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-extrabold text-navy-900">200+</p>
+          <p class="text-gray-500 text-sm mt-1">Projects Completed</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-navy-900">5★</p>
+          <p class="text-gray-500 text-sm mt-1">Google Rating</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-navy-900">100%</p>
+          <p class="text-gray-500 text-sm mt-1">Satisfaction</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-navy-900">24hr</p>
+          <p class="text-gray-500 text-sm mt-1">Response Time</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES GRID
+  ═══════════════════════════════════════ -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14">
+        <p class="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-2">What We Do</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mb-4">Our Core Services</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">From forgotten attics to weathered fences and worn concrete — we transform the spaces most contractors overlook.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Attic Flooring -->
+        <div class="group bg-gray-50 hover:bg-navy-900 rounded-2xl p-8 border border-gray-100 hover:border-navy-800 transition-all duration-300 hover:shadow-xl">
+          <div class="w-16 h-16 bg-amber-500/10 group-hover:bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <i class="fa-solid fa-layer-group text-3xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 group-hover:text-white mb-3 transition-colors">Attic Flooring</h3>
+          <p class="text-gray-500 group-hover:text-blue-100 text-sm leading-relaxed mb-4 transition-colors">
+            That dusty attic is wasted square footage waiting to be reclaimed. We engineer and install safe, durable attic decking systems that turn your storage attic into a functional, accessible part of your home — built to code and built to last.
+          </p>
+          <p class="text-gray-500 group-hover:text-blue-200 text-sm leading-relaxed">
+            Stop losing tools and holiday decorations to a dark, unstable space. Walkable attic flooring adds real value to your home the smart way.
+          </p>
+        </div>
+
+        <!-- Fence Staining -->
+        <div class="group bg-gray-50 hover:bg-navy-900 rounded-2xl p-8 border border-gray-100 hover:border-navy-800 transition-all duration-300 hover:shadow-xl">
+          <div class="w-16 h-16 bg-amber-500/10 group-hover:bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <i class="fa-solid fa-fence text-3xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 group-hover:text-white mb-3 transition-colors">Fence Staining</h3>
+          <p class="text-gray-500 group-hover:text-blue-100 text-sm leading-relaxed mb-4 transition-colors">
+            Houston's humidity and blazing sun destroy untreated wood fences fast. Our professional staining service seals out moisture, blocks UV damage, and brings back that rich, just-installed look — extending the life of your fence by years.
+          </p>
+          <p class="text-gray-500 group-hover:text-blue-200 text-sm leading-relaxed">
+            We use premium, weatherproof stains built for the Texas climate. Cedar, pine, or composite — we match the right product to your fence type.
+          </p>
+        </div>
+
+        <!-- Small Concrete -->
+        <div class="group bg-gray-50 hover:bg-navy-900 rounded-2xl p-8 border border-gray-100 hover:border-navy-800 transition-all duration-300 hover:shadow-xl">
+          <div class="w-16 h-16 bg-amber-500/10 group-hover:bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <i class="fa-solid fa-cube text-3xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 group-hover:text-white mb-3 transition-colors">Small Concrete Work</h3>
+          <p class="text-gray-500 group-hover:text-blue-100 text-sm leading-relaxed mb-4 transition-colors">
+            When you need a new walkway, patio slab, AC pad, or a small driveway extension — we pour clean, code-compliant concrete that matches your existing slab and stands up to Houston's clay soil and weather swings.
+          </p>
+          <p class="text-gray-500 group-hover:text-blue-200 text-sm leading-relaxed">
+            No job too small. We handle pad extensions, garage aprons, steps, and pour-to-grade work with proper base prep and control joints.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       BEFORE & AFTER GALLERY
+  ═══════════════════════════════════════ -->
+  <section id="gallery" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14">
+        <p class="text-amber-600 font-semibold text-sm uppercase tracking-widest mb-2">Our Work</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mb-4">Before &amp; After Transformations</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Real projects, real results. Drag the slider to see the difference professional work makes.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project 1: Attic -->
+        <div class="ba-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-shadow">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Attic Flooring — Katy, TX">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="Attic — Before" class="ba-img ba-before w-full h-full object-cover">
+            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=75" alt="Attic — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <!-- Labels -->
+            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
+            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-1">
+              <h4 class="font-bold text-navy-900">Attic Flooring</h4>
+              <span class="text-xs text-amber-600 font-semibold">Katy, TX</span>
+            </div>
+            <p class="text-gray-500 text-sm">320 sqft of engineered attic decking with ridge ventilation clearance and LED lighting pathway.</p>
+          </div>
+        </div>
+
+        <!-- Project 2: Fence -->
+        <div class="ba-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-shadow">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Fence Staining — Cypress, TX">
+            <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&q=75" alt="Fence — Before" class="ba-img ba-before w-full h-full object-cover">
+            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" alt="Fence — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
+            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-1">
+              <h4 class="font-bold text-navy-900">Fence Staining</h4>
+              <span class="text-xs text-amber-600 font-semibold">Cypress, TX</span>
+            </div>
+            <p class="text-gray-500 text-sm">180 linear ft of cedar fence — semi-transparent oil stain, sealer, and trim repaint.</p>
+          </div>
+        </div>
+
+        <!-- Project 3: Concrete -->
+        <div class="ba-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-shadow">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Concrete Patio — Houston, TX">
+            <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=75" alt="Concrete — Before" class="ba-img ba-before w-full h-full object-cover" style="filter: brightness(0.7) sepia(0.3);">
+            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=75" alt="Concrete — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
+            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-1">
+              <h4 class="font-bold text-navy-900">Concrete Patio</h4>
+              <span class="text-xs text-amber-600 font-semibold">Houston, TX</span>
+            </div>
+            <p class="text-gray-500 text-sm">12×16 ft broom-finish patio slab with color-hardener accent and expansion joints.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WHY CHOOSE US
+  ═══════════════════════════════════════ -->
+  <section id="why-us" class="py-20 bg-navy-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14">
+        <p class="text-amber-400 font-semibold text-sm uppercase tracking-widest mb-2">Why F13 LLC</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Built on Trust. Finished with Pride.</h2>
+        <p class="text-blue-200 text-lg max-w-2xl mx-auto">We're not the biggest contractor in Houston — we're the one your neighbor recommends because we show up, do it right, and leave the job site cleaner than we found it.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-map-pin text-2xl text-amber-400"></i>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Locally Owned</h4>
+          <p class="text-blue-200 text-sm leading-relaxed">Proudly serving Greater Houston — we know the neighborhoods, the soil, and the weather.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-shield-check text-2xl text-amber-400"></i>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Licensed &amp; Insured</h4>
+          <p class="text-blue-200 text-sm leading-relaxed">Full general liability coverage. Every job backed by our workmanship guarantee.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-calendar-check text-2xl text-amber-400"></i>
+          </div>
+          <h4 class="font-bold text-lg mb-2">On-Time, Every Time</h4>
+          <p class="text-blue-200 text-sm leading-relaxed">We quote realistic timelines and hit them. You'll never wait days wondering when we'll show up.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fa-solid fa-award text-2xl text-amber-400"></i>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Premium Materials</h4>
+          <p class="text-blue-200 text-sm leading-relaxed">No shortcuts. We use contractor-grade lumber, commercial stains, and psi-rated concrete every time.</p>
+        </div>
+
+      </div>
+
+      <!-- Testimonial -->
+      <div class="mt-16 bg-navy-800 rounded-2xl p-8 sm:p-10 text-center max-w-3xl mx-auto">
+        <div class="flex justify-center gap-1 mb-4">
+          <i class="fa-solid fa-star text-amber-400"></i>
+          <i class="fa-solid fa-star text-amber-400"></i>
+          <i class="fa-solid fa-star text-amber-400"></i>
+          <i class="fa-solid fa-star text-amber-400"></i>
+          <i class="fa-solid fa-star text-amber-400"></i>
+        </div>
+        <blockquote class="text-xl sm:text-2xl font-medium italic leading-relaxed text-blue-100 mb-6">
+          "F13 transformed our dusty attic into 400 sqft of usable storage. The crew was punctual, cleaned up every day, and the floor is rock solid. Highly recommend."
+        </blockquote>
+        <cite class="text-blue-300 font-semibold not-italic">— Sandra M., Katy TX</cite>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SERVICE AREA
+  ═══════════════════════════════════════ -->
+  <section class="py-16 bg-amber-50 border-t border-amber-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-extrabold text-navy-900 mb-2">Serving Greater Houston</h2>
+      <p class="text-gray-500 mb-6">Fast, reliable service in these communities and surrounding areas:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        ["Houston","Katy","Cypress","Spring","Pearland","Richmond","Fulshear","Brookshire","Tomball","The Woodlands"].map(city => (
+          <span key={city} class="bg-white border border-amber-200 text-amber-700 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm">{city}</span>
+        ))
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="bg-navy-950 text-blue-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-navy-700 rounded-lg flex items-center justify-center">
+              <span class="text-white font-extrabold text-lg">F13</span>
+            </div>
+            <div>
+              <p class="text-white font-bold text-lg leading-none">F13 LLC</p>
+              <p class="text-blue-400 text-[10px] uppercase tracking-widest">Houston, Texas</p>
+            </div>
+          </div>
+          <p class="text-blue-300 text-sm leading-relaxed">
+            General contracting and specialized home upgrades serving Houston, Katy, Cypress, Spring, and Pearland since 2018.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4">Services</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#services" class="hover:text-amber-400 transition-colors">Attic Flooring</a></li>
+            <li><a href="#services" class="hover:text-amber-400 transition-colors">Fence Staining</a></li>
+            <li><a href="#services" class="hover:text-amber-400 transition-colors">Small Concrete Work</a></li>
+            <li><a href="#quote" class="hover:text-amber-400 transition-colors">Free Estimate</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-amber-400 w-4"></i>
+              <a href="tel:+12815550199" class="hover:text-amber-400 transition-colors">(281) 555-0199</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-amber-400 w-4"></i>
+              <a href="mailto:info@f13llc.com" class="hover:text-amber-400 transition-colors">info@f13llc.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-amber-400 w-4"></i>
+              <span>Greater Houston, TX</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-clock text-amber-400 w-4"></i>
+              <span>Mon–Sat 7am–6pm</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-navy-800 mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-blue-400">
+        <p>&copy; 2026 F13 LLC. All rights reserved.</p>
+        <p>Proudly serving the Greater Houston community</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       TOAST NOTIFICATIONS
+  ═══════════════════════════════════════ -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col gap-3 pointer-events-none"></div>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script src="js/main.js"></script>
+</body>
+</html>
