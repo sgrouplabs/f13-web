@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — F13 LLC | Attic, Fence &amp; Concrete Before &amp; After</title>
+  <meta name="description" content="Browse F13 LLC's before and after project gallery — attic flooring, fence staining, and small concrete work in Greater Houston.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            navy: { 700: '#1e3a5f', 800: '#1a3354', 900: '#0f2342', 950: '#0a1a33' },
+            amber: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .slider-thumb::-webkit-slider-thumb { -webkit-appearance: none; width: 0; height: 0; }
+    .slider-thumb { border: none; outline: none; background: transparent; }
+  </style>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center shadow-md group-hover:bg-navy-700 transition-colors">
+            <span class="text-white font-extrabold text-lg tracking-tight">F13</span>
+          </div>
+          <div class="hidden sm:block">
+            <p class="text-navy-900 font-bold text-lg leading-none">F13 LLC</p>
+            <p class="text-gray-400 text-[10px] uppercase tracking-widest leading-none mt-0.5">Houston, TX</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="index.html#services" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Services</a>
+          <a href="index.html#gallery" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Gallery</a>
+          <a href="index.html#why-us" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Why Us</a>
+          <a href="index.html#quote" class="bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm px-4 py-2.5 rounded-lg shadow-md transition-all hover:shadow-lg hover:-translate-y-px">Get Quote</a>
+        </nav>
+
+        <a href="tel:+12815550199" class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm px-4 py-2.5 rounded-lg shadow-md transition-all hover:shadow-lg hover:-translate-y-px">
+          <i class="fa-solid fa-phone text-xs"></i>
+          <span class="hidden sm:inline">Call Now</span>
+        </a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="py-16 bg-navy-900 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm font-semibold mb-6 transition-colors">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+      </a>
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-widest mb-2">Our Work</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Project Gallery</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Drag the slider to see the transformation. Real projects, real results from the Greater Houston area.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE CATEGORY SELECTOR -->
+  <section class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+        <button onclick="showCategory('attic')" id="btn-attic" class="category-btn active bg-navy-900 text-white rounded-2xl p-6 text-center border-2 border-transparent hover:border-amber-400 transition-all group">
+          <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-amber-500/30 transition-colors">
+            <i class="fa-solid fa-warehouse text-2xl text-amber-400"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Attic Flooring</h3>
+          <p class="text-gray-400 text-xs">Before &amp; After</p>
+        </button>
+
+        <button onclick="showCategory('fence')" id="btn-fence" class="category-btn bg-white text-navy-900 rounded-2xl p-6 text-center border-2 border-gray-200 hover:border-amber-400 transition-all group shadow-sm">
+          <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-amber-500/20 transition-colors">
+            <i class="fa-solid fa-fence text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Fence Staining</h3>
+          <p class="text-gray-400 text-xs">Before &amp; After</p>
+        </button>
+
+        <button onclick="showCategory('concrete')" id="btn-concrete" class="category-btn bg-white text-navy-900 rounded-2xl p-6 text-center border-2 border-gray-200 hover:border-amber-400 transition-all group shadow-sm">
+          <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-amber-500/20 transition-colors">
+            <i class="fa-solid fa-cube text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Small Concrete Work</h3>
+          <p class="text-gray-400 text-xs">Before &amp; After</p>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID — ATTIC -->
+  <section id="gallery-attic" class="gallery-section py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-extrabold text-navy-900">Attic Flooring</h2>
+        <span class="text-sm text-gray-400" id="attic-count">2 projects</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Slider Card 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Katy, TX">
+            <img src="images/gallery/attic-before.jpg" alt="Attic — Before" class="ba-img ba-before w-full h-full object-cover">
+            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+              </div>
+            </div>
+            <img src="images/gallery/attic-after.jpg" alt="Attic — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
+            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-1">
+              <h4 class="font-bold text-navy-900">Attic Flooring</h4>
+              <span class="text-xs text-amber-600 font-semibold">Katy, TX</span>
+            </div>
+            <p class="text-gray-500 text-sm">320 sqft of engineered attic decking with ridge ventilation clearance and LED lighting pathway.</p>
+          </div>
+        </div>
+
+        <!-- Slider Card 2 (Attic) -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Houston, TX">
+            <img src="images/gallery/attic-before.jpg" alt="Attic — Before" class="ba-img ba-before w-full h-full object-cover">
+            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+              </div>
+            </div>
+            <img src="images/gallery/attic-after.jpg" alt="Attic — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
+            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-1">
+              <h4 class="font-bold text-navy-900">Attic Flooring</h4>
+              <span class="text-xs text-amber-600 font-semibold">Houston, TX</span>
+            </div>
+            <p class="text-gray-500 text-sm">400 sqft of engineered attic decking with LED pathway lighting and full ventilation clearance.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Placeholder note -->
+      <div class="mt-6 text-center">
+        <p class="text-gray-400 text-sm">More attic projects coming soon — upload images to <code class="bg-gray-200 px-2 py-1 rounded text-xs">public/images/gallery/</code> and name them <code class="bg-gray-200 px-2 py-1 rounded text-xs">attic-before.jpg</code> / <code class="bg-gray-200 px-2 py-1 rounded text-xs">attic-after.jpg</code></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID — FENCE (hidden by default) -->
+  <section id="gallery-fence" class="gallery-section py-12 bg-gray-50" style="display: none;">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-extrabold text-navy-900">Fence Staining</h2>
+        <span class="text-sm text-gray-400" id="fence-count">1 project</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Cypress, TX">
+            <img src="images/gallery/fence-before.jpg" alt="Fence — Before" class="ba-img ba-before w-full h-full object-cover">
+            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+              </div>
+            </div>
+            <img src="images/gallery/fence-after.jpg" alt="Fence — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
+            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-1">
+              <h4 class="font-bold text-navy-900">Fence Staining</h4>
+              <span class="text-xs text-amber-600 font-semibold">Cypress, TX</span>
+            </div>
+            <p class="text-gray-500 text-sm">180 linear ft of cedar fence — semi-transparent oil stain, sealer, and trim repaint.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-6 text-center">
+        <p class="text-gray-400 text-sm">More fence projects coming soon — upload images to <code class="bg-gray-200 px-2 py-1 rounded text-xs">public/images/gallery/</code> and name them <code class="bg-gray-200 px-2 py-1 rounded text-xs">fence-before.jpg</code> / <code class="bg-gray-200 px-2 py-1 rounded text-xs">fence-after.jpg</code></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID — CONCRETE (hidden by default) -->
+  <section id="gallery-concrete" class="gallery-section py-12 bg-gray-50" style="display: none;">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-extrabold text-navy-900">Small Concrete Work</h2>
+        <span class="text-sm text-gray-400" id="concrete-count">1 project</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Houston, TX">
+            <img src="images/gallery/concrete-before.jpg" alt="Concrete — Before" class="ba-img ba-before w-full h-full object-cover">
+            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+              </div>
+            </div>
+            <img src="images/gallery/concrete-after.jpg" alt="Concrete — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
+            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-1">
+              <h4 class="font-bold text-navy-900">Concrete Patio</h4>
+              <span class="text-xs text-amber-600 font-semibold">Houston, TX</span>
+            </div>
+            <p class="text-gray-500 text-sm">12×16 ft broom-finish patio slab with color-hardener accent and expansion joints.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-6 text-center">
+        <p class="text-gray-400 text-sm">More concrete projects coming soon — upload images to <code class="bg-gray-200 px-2 py-1 rounded text-xs">public/images/gallery/</code> and name them <code class="bg-gray-200 px-2 py-1 rounded text-xs">concrete-before.jpg</code> / <code class="bg-gray-200 px-2 py-1 rounded text-xs">concrete-after.jpg</code></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE/AFTER SLIDER SCRIPT -->
+  <script>
+    // Category tab switching
+    function showCategory(cat) {
+      document.querySelectorAll('.gallery-section').forEach(s => s.style.display = 'none');
+      document.getElementById('gallery-' + cat).style.display = 'block';
+
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('bg-navy-900', 'text-white');
+        btn.classList.add('bg-white', 'text-navy-900', 'border-gray-200');
+      });
+
+      const activeBtn = document.getElementById('btn-' + cat);
+      activeBtn.classList.remove('bg-white', 'text-navy-900', 'border-gray-200');
+      activeBtn.classList.add('bg-navy-900', 'text-white');
+    }
+
+    // Before/After slider logic
+    document.querySelectorAll('.ba-slider').forEach(slider => {
+      const beforeImg = slider.querySelector('.ba-before');
+      const afterImg = slider.querySelector('.ba-after');
+      const divider = slider.querySelector('.ba-divider');
+
+      const updateSlider = (x) => {
+        const rect = slider.getBoundingClientRect();
+        let pos = ((x - rect.left) / rect.width) * 100;
+        pos = Math.max(0, Math.min(100, pos));
+        divider.style.left = pos + '%';
+        afterImg.style.clipPath = 'inset(0 0 0 ' + pos + '%)';
+      };
+
+      slider.addEventListener('mousemove', (e) => updateSlider(e.clientX));
+      slider.addEventListener('touchmove', (e) => updateSlider(e.touches[0].clientX));
+      slider.addEventListener('mouseleave', () => {
+        divider.style.left = '50%';
+        afterImg.style.clipPath = 'inset(0 0 0 50%)';
+      });
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-950 text-white pt-12 pb-8 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center">
+              <span class="text-white font-extrabold text-lg">F13</span>
+            </div>
+            <div>
+              <p class="font-bold text-white">F13 LLC</p>
+              <p class="text-gray-400 text-xs">Houston, TX</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm">Trusted general contracting and specialized home upgrades for the Greater Houston area.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Services</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="index.html#services" class="hover:text-amber-400 transition-colors">Attic Flooring</a></li>
+            <li><a href="index.html#services" class="hover:text-amber-400 transition-colors">Fence Staining</a></li>
+            <li><a href="index.html#services" class="hover:text-amber-400 transition-colors">Small Concrete Work</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="index.html#gallery" class="hover:text-amber-400 transition-colors">Gallery</a></li>
+            <li><a href="index.html#why-us" class="hover:text-amber-400 transition-colors">Why Us</a></li>
+            <li><a href="index.html#quote" class="hover:text-amber-400 transition-colors">Get Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><i class="fa-solid fa-phone text-amber-400 mr-2"></i><a href="tel:+12815550199" class="hover:text-amber-400">+1 (281) 555-0199</a></li>
+            <li><i class="fa-solid fa-envelope text-amber-400 mr-2"></i>info@f13llc.com</li>
+            <li><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i>Greater Houston, TX</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-navy-800 pt-6 text-center text-gray-500 text-xs">
+        &copy; 2026 F13 LLC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
