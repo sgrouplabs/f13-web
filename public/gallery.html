@@ -18,7 +18,7 @@
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
           colors: {
             navy: { 700: '#1e3a5f', 800: '#1a3354', 900: '#0f2342', 950: '#0a1a33' },
-            amber: { 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563' },
+            gray: { 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563' },
           }
         }
       }
@@ -68,7 +68,7 @@
       </a>
       <p class="text-gray-400 font-semibold text-sm uppercase tracking-widest mb-2">Our Work</p>
       <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Project Gallery</h1>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Drag the slider to see the transformation. Real projects, real results from the Greater Houston area.</p>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Real projects, real results from the Greater Houston area.</p>
     </div>
   </section>
 
@@ -105,14 +105,14 @@
     </div>
   </section>
 
-  <!-- DYNAMIC GALLERY SECTIONS — populated by JS -->
+  <!-- DYNAMIC GALLERY SECTIONS -->
   <section id="gallery-attic" class="gallery-section py-12 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between mb-8">
         <h2 class="text-2xl font-extrabold text-navy-900">Attic Flooring</h2>
         <span class="text-sm text-gray-400" id="attic-count">Loading...</span>
       </div>
-      <div id="attic-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+      <div id="attic-grid" class="space-y-10"></div>
     </div>
   </section>
 
@@ -122,7 +122,7 @@
         <h2 class="text-2xl font-extrabold text-navy-900">Fence Staining</h2>
         <span class="text-sm text-gray-400" id="fence-count">Loading...</span>
       </div>
-      <div id="fence-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+      <div id="fence-grid" class="space-y-10"></div>
     </div>
   </section>
 
@@ -132,7 +132,7 @@
         <h2 class="text-2xl font-extrabold text-navy-900">Small Concrete Work</h2>
         <span class="text-sm text-gray-400" id="concrete-count">Loading...</span>
       </div>
-      <div id="concrete-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+      <div id="concrete-grid" class="space-y-10"></div>
     </div>
   </section>
 
@@ -147,7 +147,7 @@
     </div>
   </section>
 
-  <!-- SLIDER SCRIPT -->
+  <!-- STATIC GALLERY SCRIPT -->
   <script>
     const galleries = {
       attic: { grid: 'attic-grid', count: 'attic-count', label: 'Attic Flooring' },
@@ -155,42 +155,41 @@
       concrete: { grid: 'concrete-grid', count: 'concrete-count', label: 'Small Concrete Work' }
     };
 
-    // Two-container side-by-side slider — object-contain so images fit fully without cropping
-    function makeSliderCard(beforeSrc, afterSrc, projectLabel, category) {
+    // Static card: two large images side by side, no slider
+    function makeStaticCard(beforeSrc, afterSrc, projectLabel, category) {
       return `
         <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
-          <div class="ba-slider relative select-none flex items-stretch" style="min-height: 300px; max-height: 560px;">
+          <div class="flex flex-col lg:flex-row">
 
-            <!-- BEFORE side -->
-            <div class="ba-before-wrap w-1/2 relative overflow-hidden">
+            <!-- BEFORE -->
+            <div class="relative flex-1 overflow-hidden bg-gray-100" style="min-height: 400px;">
               <img src="${beforeSrc}" alt="${category} — Before"
-                   class="ba-img ba-before w-full h-full object-contain"
-                   style="object-position: left;">
-              <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm z-10">Before</span>
-            </div>
-
-            <!-- Draggable divider -->
-            <div class="ba-divider absolute top-0 bottom-0 w-1 bg-gray-400 z-20 shadow-lg cursor-col-resize flex items-center justify-center"
-                 style="left: 50%; transform: translateX(-50%);">
-              <div class="w-8 h-8 bg-gray-400 rounded-full shadow-lg flex items-center justify-center z-20">
-                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
+                   class="w-full h-full object-cover"
+                   style="min-height: 400px;">
+              <div class="absolute top-4 left-4">
+                <span class="bg-black/60 text-white text-xs font-bold px-3 py-1.5 rounded-lg backdrop-blur-sm">BEFORE</span>
               </div>
             </div>
 
-            <!-- AFTER side -->
-            <div class="ba-after-wrap w-1/2 relative overflow-hidden">
+            <!-- Divider line with label -->
+            <div class="relative flex items-center justify-center bg-navy-900 lg:w-16 w-full lg:h-auto h-16">
+              <span class="text-white text-xs font-bold uppercase tracking-widest rotate-0 lg:rotate-90 whitespace-nowrap">Before &amp; After</span>
+            </div>
+
+            <!-- AFTER -->
+            <div class="relative flex-1 overflow-hidden bg-gray-100" style="min-height: 400px;">
               <img src="${afterSrc}" alt="${category} — After"
-                   class="ba-img ba-after w-full h-full object-contain"
-                   style="object-position: right;">
-              <span class="absolute bottom-2 right-2 bg-gray-500 text-white text-xs px-2 py-1 rounded font-bold backdrop-blur-sm z-10">After</span>
+                   class="w-full h-full object-cover"
+                   style="min-height: 400px;">
+              <div class="absolute top-4 right-4">
+                <span class="bg-gray-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg backdrop-blur-sm">AFTER</span>
+              </div>
             </div>
 
           </div>
-          <div class="p-5">
-            <div class="flex items-center justify-between mb-1">
-              <h4 class="font-bold text-navy-900">${galleries[category].label}</h4>
-              <span class="text-xs text-gray-500 font-semibold">${projectLabel}</span>
-            </div>
+          <div class="p-5 flex items-center justify-between">
+            <h4 class="font-bold text-navy-900">${galleries[category].label}</h4>
+            <span class="text-xs text-gray-500 font-semibold">${projectLabel}</span>
           </div>
         </div>`;
     }
@@ -208,7 +207,7 @@
       { category: 'concrete', num: 3, before: 'images/gallery/concrete-03-before.jpeg', after: 'images/gallery/concrete-03-after.jpeg', label: 'Spring, TX' },
     ];
 
-    // Inject gallery cards for all categories
+    // Inject static cards
     Object.keys(galleries).forEach(cat => {
       const catProjects = projects.filter(p => p.category === cat);
       const grid = document.getElementById(galleries[cat].grid);
@@ -216,9 +215,9 @@
       countEl.textContent = catProjects.length + (catProjects.length === 1 ? ' project' : ' projects');
 
       if (catProjects.length === 0) {
-        grid.innerHTML = '<p class="text-gray-400 text-center col-span-2 py-12">No projects uploaded yet for this category.</p>';
+        grid.innerHTML = '<p class="text-gray-400 text-center py-12">No projects uploaded yet for this category.</p>';
       } else {
-        grid.innerHTML = catProjects.map(p => makeSliderCard(p.before, p.after, p.label, p.category)).join('');
+        grid.innerHTML = catProjects.map(p => makeStaticCard(p.before, p.after, p.label, p.category)).join('');
       }
     });
 
@@ -236,32 +235,6 @@
       activeBtn.classList.remove('bg-white', 'text-navy-900', 'border-gray-200');
       activeBtn.classList.add('bg-navy-900', 'text-white');
     }
-
-    // Before/After slider — clip the after image container based on divider position
-    document.querySelectorAll('.ba-slider').forEach(slider => {
-      const beforeWrap = slider.querySelector('.ba-before-wrap');
-      const afterWrap = slider.querySelector('.ba-after-wrap');
-      const divider = slider.querySelector('.ba-divider');
-
-      const updateSlider = (clientX) => {
-        const rect = slider.getBoundingClientRect();
-        let pct = ((clientX - rect.left) / rect.width) * 100;
-        pct = Math.max(5, Math.min(95, pct));
-        divider.style.left = pct + '%';
-        divider.style.transform = 'translateX(-50%)';
-        beforeWrap.style.width = pct + '%';
-        afterWrap.style.width = (100 - pct) + '%';
-      };
-
-      slider.addEventListener('mousemove', e => updateSlider(e.clientX));
-      slider.addEventListener('touchmove', e => updateSlider(e.touches[0].clientX));
-      slider.addEventListener('mouseleave', () => {
-        divider.style.left = '50%';
-        divider.style.transform = 'translateX(-50%)';
-        beforeWrap.style.width = '50%';
-        afterWrap.style.width = '50%';
-      });
-    });
   </script>
 
   <!-- FOOTER -->
