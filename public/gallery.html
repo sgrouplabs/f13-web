@@ -25,11 +25,6 @@
     }
   </script>
 
-  <style>
-    .slider-thumb::-webkit-slider-thumb { -webkit-appearance: none; width: 0; height: 0; }
-    .slider-thumb { border: none; outline: none; background: transparent; }
-  </style>
-
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="font-sans text-gray-800 antialiased bg-gray-50">
@@ -51,7 +46,7 @@
 
         <nav class="hidden lg:flex items-center gap-8">
           <a href="index.html#services" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Services</a>
-          <a href="index.html#gallery" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Gallery</a>
+          <a href="gallery.html" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Gallery</a>
           <a href="index.html#why-us" class="text-gray-600 hover:text-navy-900 font-medium text-sm transition-colors">Why Us</a>
           <a href="index.html#quote" class="bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm px-4 py-2.5 rounded-lg shadow-md transition-all hover:shadow-lg hover:-translate-y-px">Get Quote</a>
         </nav>
@@ -92,7 +87,7 @@
 
         <button onclick="showCategory('fence')" id="btn-fence" class="category-btn bg-white text-navy-900 rounded-2xl p-6 text-center border-2 border-gray-200 hover:border-amber-400 transition-all group shadow-sm">
           <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-amber-500/20 transition-colors">
-            <i class="fa-solid fa-fence text-2xl text-amber-500"></i>
+            <i class="fa-solid fa-paintbrush text-2xl text-amber-500"></i>
           </div>
           <h3 class="font-bold text-lg mb-1">Fence Staining</h3>
           <p class="text-gray-400 text-xs">Before &amp; After</p>
@@ -110,153 +105,108 @@
     </div>
   </section>
 
-  <!-- GALLERY GRID — ATTIC -->
+  <!-- DYNAMIC GALLERY SECTIONS — populated by JS -->
   <section id="gallery-attic" class="gallery-section py-12 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <div class="flex items-center justify-between mb-8">
         <h2 class="text-2xl font-extrabold text-navy-900">Attic Flooring</h2>
-        <span class="text-sm text-gray-400" id="attic-count">2 projects</span>
+        <span class="text-sm text-gray-400" id="attic-count">Loading...</span>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <!-- Slider Card 1 -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
-          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Katy, TX">
-            <img src="images/gallery/attic-before.jpg" alt="Attic — Before" class="ba-img ba-before w-full h-full object-cover">
-            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
-                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
-              </div>
-            </div>
-            <img src="images/gallery/attic-after.jpg" alt="Attic — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
-            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
-            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center justify-between mb-1">
-              <h4 class="font-bold text-navy-900">Attic Flooring</h4>
-              <span class="text-xs text-amber-600 font-semibold">Katy, TX</span>
-            </div>
-            <p class="text-gray-500 text-sm">320 sqft of engineered attic decking with ridge ventilation clearance and LED lighting pathway.</p>
-          </div>
-        </div>
-
-        <!-- Slider Card 2 (Attic) -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
-          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Houston, TX">
-            <img src="images/gallery/attic-before.jpg" alt="Attic — Before" class="ba-img ba-before w-full h-full object-cover">
-            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
-                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
-              </div>
-            </div>
-            <img src="images/gallery/attic-after.jpg" alt="Attic — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
-            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
-            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center justify-between mb-1">
-              <h4 class="font-bold text-navy-900">Attic Flooring</h4>
-              <span class="text-xs text-amber-600 font-semibold">Houston, TX</span>
-            </div>
-            <p class="text-gray-500 text-sm">400 sqft of engineered attic decking with LED pathway lighting and full ventilation clearance.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Placeholder note -->
-      <div class="mt-6 text-center">
-        <p class="text-gray-400 text-sm">More attic projects coming soon — upload images to <code class="bg-gray-200 px-2 py-1 rounded text-xs">public/images/gallery/</code> and name them <code class="bg-gray-200 px-2 py-1 rounded text-xs">attic-before.jpg</code> / <code class="bg-gray-200 px-2 py-1 rounded text-xs">attic-after.jpg</code></p>
-      </div>
+      <div id="attic-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
     </div>
   </section>
 
-  <!-- GALLERY GRID — FENCE (hidden by default) -->
   <section id="gallery-fence" class="gallery-section py-12 bg-gray-50" style="display: none;">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <div class="flex items-center justify-between mb-8">
         <h2 class="text-2xl font-extrabold text-navy-900">Fence Staining</h2>
-        <span class="text-sm text-gray-400" id="fence-count">1 project</span>
+        <span class="text-sm text-gray-400" id="fence-count">Loading...</span>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
-          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Cypress, TX">
-            <img src="images/gallery/fence-before.jpg" alt="Fence — Before" class="ba-img ba-before w-full h-full object-cover">
-            <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
-                <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
-              </div>
-            </div>
-            <img src="images/gallery/fence-after.jpg" alt="Fence — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
-            <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
-            <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center justify-between mb-1">
-              <h4 class="font-bold text-navy-900">Fence Staining</h4>
-              <span class="text-xs text-amber-600 font-semibold">Cypress, TX</span>
-            </div>
-            <p class="text-gray-500 text-sm">180 linear ft of cedar fence — semi-transparent oil stain, sealer, and trim repaint.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-6 text-center">
-        <p class="text-gray-400 text-sm">More fence projects coming soon — upload images to <code class="bg-gray-200 px-2 py-1 rounded text-xs">public/images/gallery/</code> and name them <code class="bg-gray-200 px-2 py-1 rounded text-xs">fence-before.jpg</code> / <code class="bg-gray-200 px-2 py-1 rounded text-xs">fence-after.jpg</code></p>
-      </div>
+      <div id="fence-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
     </div>
   </section>
 
-  <!-- GALLERY GRID — CONCRETE (hidden by default) -->
   <section id="gallery-concrete" class="gallery-section py-12 bg-gray-50" style="display: none;">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <div class="flex items-center justify-between mb-8">
         <h2 class="text-2xl font-extrabold text-navy-900">Small Concrete Work</h2>
-        <span class="text-sm text-gray-400" id="concrete-count">1 project</span>
+        <span class="text-sm text-gray-400" id="concrete-count">Loading...</span>
       </div>
+      <div id="concrete-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- CTA BANNER -->
+  <section class="py-12 bg-amber-50 border-t border-amber-100 text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold text-navy-900 mb-3">Ready to Transform Your Home?</h2>
+      <p class="text-gray-500 mb-6">Get a free, no-obligation estimate for your project today.</p>
+      <a href="index.html#quote" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-base px-8 py-3 rounded-xl shadow-lg transition-all hover:shadow-xl hover:-translate-y-px">
+        <i class="fa-solid fa-calendar-check"></i> Request Free Estimate
+      </a>
+    </div>
+  </section>
 
+  <!-- SLIDER SCRIPT -->
+  <script>
+    const galleries = {
+      attic: { grid: 'attic-grid', count: 'attic-count', label: 'Attic Flooring' },
+      fence: { grid: 'fence-grid', count: 'fence-count', label: 'Fence Staining' },
+      concrete: { grid: 'concrete-grid', count: 'concrete-count', label: 'Small Concrete Work' }
+    };
+
+    function makeSliderCard(beforeSrc, afterSrc, projectLabel, category) {
+      return `
         <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
-          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="Houston, TX">
-            <img src="images/gallery/concrete-before.jpg" alt="Concrete — Before" class="ba-img ba-before w-full h-full object-cover">
+          <div class="ba-slider relative aspect-[4/3] overflow-hidden cursor-col-resize select-none" data-label="${projectLabel}">
+            <img src="${beforeSrc}" alt="${category} — Before" class="ba-img ba-before w-full h-full object-cover">
             <div class="ba-divider absolute top-0 bottom-0 w-0.5 bg-amber-400 z-10 shadow-lg" style="left: 50%;">
               <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-amber-400 rounded-full shadow-lg flex items-center justify-center">
                 <i class="fa-solid fa-arrows-left-right text-navy-900 text-xs font-bold"></i>
               </div>
             </div>
-            <img src="images/gallery/concrete-after.jpg" alt="Concrete — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
+            <img src="${afterSrc}" alt="${category} — After" class="ba-img ba-after w-full h-full object-cover absolute inset-0" style="clip-path: inset(0 0 0 50%);">
             <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</span>
             <span class="absolute bottom-2 right-2 bg-amber-500 text-navy-900 text-xs px-2 py-1 rounded font-bold backdrop-blur-sm">After</span>
           </div>
           <div class="p-5">
             <div class="flex items-center justify-between mb-1">
-              <h4 class="font-bold text-navy-900">Concrete Patio</h4>
-              <span class="text-xs text-amber-600 font-semibold">Houston, TX</span>
+              <h4 class="font-bold text-navy-900">${galleries[category].label}</h4>
+              <span class="text-xs text-amber-600 font-semibold">${projectLabel}</span>
             </div>
-            <p class="text-gray-500 text-sm">12×16 ft broom-finish patio slab with color-hardener accent and expansion joints.</p>
           </div>
-        </div>
+        </div>`;
+    }
 
-      </div>
+    // Image manifest — add entries here as you upload more projects
+    // Format: { category: 'attic'|'fence'|'concrete', num: 1, before: 'url', after: 'url', label: 'City, TX' }
+    const projects = [
+      // Attic
+      { category: 'attic', num: 1, before: 'images/gallery/attic-01-before.jpeg', after: 'images/gallery/attic-01-after.jpeg', label: 'Katy, TX' },
+      { category: 'attic', num: 2, before: 'images/gallery/attic-02-before.jpeg', after: 'images/gallery/attic-02-after.jpeg', label: 'Houston, TX' },
+      // Fence
+      { category: 'fence', num: 1, before: 'images/gallery/fence-01-before.jpeg', after: 'images/gallery/fence-01-after.jpeg', label: 'Cypress, TX' },
+      // Concrete
+      { category: 'concrete', num: 1, before: 'images/gallery/concrete-01-before.jpeg', after: 'images/gallery/concrete-01-after.jpeg', label: 'Houston, TX' },
+      { category: 'concrete', num: 2, before: 'images/gallery/concrete-02-before.jpeg', after: 'images/gallery/concrete-02-after.jpeg', label: 'Katy, TX' },
+      { category: 'concrete', num: 3, before: 'images/gallery/concrete-03-before.jpeg', after: 'images/gallery/concrete-03-after.jpeg', label: 'Spring, TX' },
+    ];
 
-      <div class="mt-6 text-center">
-        <p class="text-gray-400 text-sm">More concrete projects coming soon — upload images to <code class="bg-gray-200 px-2 py-1 rounded text-xs">public/images/gallery/</code> and name them <code class="bg-gray-200 px-2 py-1 rounded text-xs">concrete-before.jpg</code> / <code class="bg-gray-200 px-2 py-1 rounded text-xs">concrete-after.jpg</code></p>
-      </div>
-    </div>
-  </section>
+    // Inject gallery cards for all categories
+    Object.keys(galleries).forEach(cat => {
+      const catProjects = projects.filter(p => p.category === cat);
+      const grid = document.getElementById(galleries[cat].grid);
+      const countEl = document.getElementById(galleries[cat].count);
+      countEl.textContent = catProjects.length + (catProjects.length === 1 ? ' project' : ' projects');
 
-  <!-- BEFORE/AFTER SLIDER SCRIPT -->
-  <script>
-    // Category tab switching
+      if (catProjects.length === 0) {
+        grid.innerHTML = '<p class="text-gray-400 text-center col-span-2 py-12">No projects uploaded yet for this category.</p>';
+      } else {
+        grid.innerHTML = catProjects.map(p => makeSliderCard(p.before, p.after, p.label, p.category)).join('');
+      }
+    });
+
+    // Category switching
     function showCategory(cat) {
       document.querySelectorAll('.gallery-section').forEach(s => s.style.display = 'none');
       document.getElementById('gallery-' + cat).style.display = 'block';
@@ -295,7 +245,7 @@
   </script>
 
   <!-- FOOTER -->
-  <footer class="bg-navy-950 text-white pt-12 pb-8 mt-8">
+  <footer class="bg-navy-950 text-white pt-12 pb-8 mt-0">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
         <div>
@@ -321,7 +271,7 @@
         <div>
           <h4 class="text-white font-bold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-gray-400 text-sm">
-            <li><a href="index.html#gallery" class="hover:text-amber-400 transition-colors">Gallery</a></li>
+            <li><a href="gallery.html" class="hover:text-amber-400 transition-colors">Gallery</a></li>
             <li><a href="index.html#why-us" class="hover:text-amber-400 transition-colors">Why Us</a></li>
             <li><a href="index.html#quote" class="hover:text-amber-400 transition-colors">Get Quote</a></li>
           </ul>
