@@ -9,14 +9,14 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kanit:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], heading: ['Kanit', 'sans-serif'] },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
           colors: {
             navy: { 700: '#1e3a5f', 800: '#1a3354', 900: '#0f2342', 950: '#0a1a33' },
             gray: { 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563' },
@@ -25,23 +25,6 @@
       }
     }
   </script>
-
-  <style>
-    /* Global heading typography — Kanit Bold Italic */
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Kanit', sans-serif !important;
-      font-weight: 900 !important;
-      font-style: italic !important;
-    }
-    .logo-text {
-      font-family: 'Kanit', sans-serif !important;
-      font-weight: 900 !important;
-      font-style: italic !important;
-    }
-    p, span, li, div {
-      font-style: normal !important;
-    }
-  </style>
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -65,17 +48,17 @@
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8">
-          <a href="index.html#services" class="text-slate-800 hover:text-blue-600 font-semibold text-sm transition-colors duration-200 relative group">
+          <a href="index.html#services" class="text-slate-800 hover:text-blue-600 font-bold text-xl transition-colors duration-200 relative group px-3">
             Services
-            <span class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-200"></span>
+            <span class="absolute -bottom-0.5 left-3 right-3 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-200"></span>
           </a>
-          <a href="gallery.html" class="text-slate-800 hover:text-blue-600 font-semibold text-sm transition-colors duration-200 relative group">
+          <a href="gallery.html" class="text-slate-800 hover:text-blue-600 font-bold text-xl transition-colors duration-200 relative group px-3">
             Gallery
-            <span class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-200"></span>
+            <span class="absolute -bottom-0.5 left-3 right-3 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-200"></span>
           </a>
-          <a href="index.html#why-us" class="text-slate-800 hover:text-blue-600 font-semibold text-sm transition-colors duration-200 relative group">
+          <a href="index.html#why-us" class="text-slate-800 hover:text-blue-600 font-bold text-xl transition-colors duration-200 relative group px-3">
             Why Us
-            <span class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-200"></span>
+            <span class="absolute -bottom-0.5 left-3 right-3 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-200"></span>
           </a>
         </nav>
 
