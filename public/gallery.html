@@ -9,14 +9,14 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kanit:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], heading: ['Kanit', 'sans-serif'] },
           colors: {
             navy: { 700: '#1e3a5f', 800: '#1a3354', 900: '#0f2342', 950: '#0a1a33' },
             gray: { 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563' },
@@ -25,6 +25,23 @@
       }
     }
   </script>
+
+  <style>
+    /* Global heading typography — Kanit Bold Italic */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Kanit', sans-serif !important;
+      font-weight: 900 !important;
+      font-style: italic !important;
+    }
+    .logo-text {
+      font-family: 'Kanit', sans-serif !important;
+      font-weight: 900 !important;
+      font-style: italic !important;
+    }
+    p, span, li, div {
+      font-style: normal !important;
+    }
+  </style>
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
