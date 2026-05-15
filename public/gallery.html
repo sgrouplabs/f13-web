@@ -344,6 +344,11 @@
         ? '<i class="fa-solid fa-play-circle"></i> Hide Videos'
         : '<i class="fa-solid fa-play-circle"></i> See Videos';
     }
+
+    // Sync UI to default tab (attic) on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      showCategory('attic');
+    });
   </script>
 
   <!-- FOOTER -->
