@@ -285,6 +285,11 @@
       } else {
         grid.innerHTML = catProjects.map(p => makeStaticCard(p.before, p.after, p.label, p.category)).join('');
       }
+
+      // Add collage footer image for concrete
+      if (cat === 'concrete') {
+        grid.innerHTML += '\n        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">\n          <img src="images/gallery/concrete-04-after-collage.png" alt="Concrete work collage" class="w-full h-auto object-cover">\n        </div>';
+      }
     });
 
     // Category switching
