@@ -99,6 +99,17 @@ section#hero h1 { text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
   letter-spacing: 0.05em;
 }
 
+/* ─── Marquee / Scrolling Banner ─────────────────────────── */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 28s linear infinite;
+}
+
 /* ─── Scrollbar styling ───────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }

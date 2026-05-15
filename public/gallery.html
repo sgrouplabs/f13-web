@@ -153,6 +153,17 @@
         <h2 class="text-2xl font-extrabold text-navy-900">Attic Flooring</h2>
         <span class="text-sm text-gray-400" id="attic-count">Loading...</span>
       </div>
+      <!-- Scrolling marquee banner -->
+      <div id="attic-marquee" class="hidden mb-8 overflow-hidden rounded-xl bg-navy-900 border border-navy-800">
+        <div class="marquee-track flex items-center whitespace-nowrap py-3 px-4">
+          <span class="marquee-content text-white text-sm font-medium">
+            Plywood &amp; Decking Panel Installation &nbsp;&nbsp;•&nbsp;&nbsp; Raised Floor Systems Over Insulation &nbsp;&nbsp;•&nbsp;&nbsp; Professional Attic Subfloor Installation &nbsp;&nbsp;•&nbsp;&nbsp; Safe Durable Storage Flooring &nbsp;&nbsp;•&nbsp;&nbsp; Free In-Person Attic Evaluation &nbsp;&nbsp;•&nbsp;&nbsp; Serving Katy, Cypress, Spring &amp; Greater Houston &nbsp;&nbsp;•&nbsp;&nbsp;
+          </span>
+          <span class="marquee-content text-white text-sm font-medium" aria-hidden="true">
+            Plywood &amp; Decking Panel Installation &nbsp;&nbsp;•&nbsp;&nbsp; Raised Floor Systems Over Insulation &nbsp;&nbsp;•&nbsp;&nbsp; Professional Attic Subfloor Installation &nbsp;&nbsp;•&nbsp;&nbsp; Safe Durable Storage Flooring &nbsp;&nbsp;•&nbsp;&nbsp; Free In-Person Attic Evaluation &nbsp;&nbsp;•&nbsp;&nbsp; Serving Katy, Cypress, Spring &amp; Greater Houston &nbsp;&nbsp;•&nbsp;&nbsp;
+          </span>
+        </div>
+      </div>
       <div id="attic-grid" class="space-y-10"></div>
     </div>
   </section>
@@ -308,6 +319,9 @@
     function showCategory(cat) {
       document.querySelectorAll('.gallery-section').forEach(s => s.style.display = 'none');
       document.getElementById('gallery-' + cat).style.display = 'block';
+
+      // Show/hide attic marquee
+      document.getElementById('attic-marquee').classList.toggle('hidden', cat !== 'attic');
 
       document.querySelectorAll('.category-btn').forEach(btn => {
         btn.classList.remove('bg-navy-900', 'text-white');
