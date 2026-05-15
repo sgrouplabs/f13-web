@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery — F13 LLC | Attic, Fence &amp; Concrete Before &amp; After</title>
-  <meta name="description" content="Browse F13 LLC's before and after project gallery — attic flooring, fence staining, and small concrete work in Greater Houston.">
+  <meta name="description" content="Browse F13 LLC's fence staining gallery — before and after photos from Houston, TX and surrounding areas. Fence power washing, staining, and sealing services in Katy, Cypress, Spring and Greater Houston.">
   <link rel="icon" type="image/png" href="/brand/f13-logo-192px.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,6 +27,31 @@
   </script>
 
   <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Contractor",
+    "name": "F13 LLC",
+    "url": "https://www.f13llc.com",
+    "telephone": "+1-281-555-0199",
+    "description": "Fence staining contractor serving Houston TX, Katy, Cypress, Spring and Greater Houston. Power washing, staining and sealing for wood fences.",
+    "areaServed": [
+      { "@type": "City", "name": "Houston" },
+      { "@type": "City", "name": "Katy" },
+      { "@type": "City", "name": "Cypress" },
+      { "@type": "City", "name": "Spring" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Fence Staining Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fence Power Washing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fence Staining" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fence Sealing" } }
+      ]
+    }
+  }
+  </script>
 </head>
 <body class="font-sans text-gray-800 antialiased bg-gray-50">
 
@@ -238,14 +263,15 @@
     };
 
     // Static card: two large images side by side, no slider
-    function makeStaticCard(beforeSrc, afterSrc, projectLabel, category) {
+    function makeStaticCard(beforeSrc, afterSrc, projectLabel, category, location) {
+      const altText = location || galleries[category].label;
       return `
         <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
           <div class="flex flex-col lg:flex-row">
 
             <!-- BEFORE -->
             <div class="relative flex-1 overflow-hidden bg-gray-100" style="min-height: 400px;">
-              <img src="${beforeSrc}" alt="${category} — Before"
+              <img src="${beforeSrc}" alt="${altText} fence staining before"
                    class="w-full h-full object-cover"
                    style="min-height: 400px;">
               <div class="absolute top-4 left-4">
@@ -260,7 +286,7 @@
 
             <!-- AFTER -->
             <div class="relative flex-1 overflow-hidden bg-gray-100" style="min-height: 400px;">
-              <img src="${afterSrc}" alt="${category} — After"
+              <img src="${afterSrc}" alt="${altText} fence staining after"
                    class="w-full h-full object-cover"
                    style="min-height: 400px;">
               <div class="absolute top-4 right-4">
@@ -282,8 +308,8 @@
       { category: 'attic', num: 1, before: 'images/gallery/attic-01-before.jpeg', after: 'images/gallery/attic-01-after.jpeg', label: 'Katy, TX' },
       { category: 'attic', num: 2, before: 'images/gallery/attic-02-after.jpg', after: 'images/gallery/attic-02-after.jpeg', label: 'Houston, TX' },
       // Fence
-      { category: 'fence', num: 2, before: 'images/gallery/fence-02-before.jpeg', after: 'images/gallery/fence-02-after.jpeg', label: 'Houston, TX' },
-      { category: 'fence', num: 1, before: 'images/gallery/fence-01-before.jpeg', after: 'images/gallery/fence-01-after.jpeg', label: 'Cypress, TX' },
+      { category: 'fence', num: 2, before: 'images/gallery/fence-02-before.jpeg', after: 'images/gallery/fence-02-after.jpeg', label: 'Houston, TX', location: 'Houston, TX' },
+      { category: 'fence', num: 1, before: 'images/gallery/fence-01-before.jpeg', after: 'images/gallery/fence-01-after.jpeg', label: 'Cypress, TX', location: 'Cypress, TX' },
       // Concrete
       { category: 'concrete', num: 1, before: 'images/gallery/concrete-01-before.jpg', after: 'images/gallery/concrete-01-after.jpeg', label: 'Houston, TX' },
       { category: 'concrete', num: 2, before: 'images/gallery/concrete-02-before.jpeg', after: 'images/gallery/concrete-02-after.jpeg', label: 'Katy, TX' },
@@ -300,7 +326,7 @@
       if (catProjects.length === 0) {
         grid.innerHTML = '<p class="text-gray-400 text-center py-12">No projects uploaded yet for this category.</p>';
       } else {
-        grid.innerHTML = catProjects.map(p => makeStaticCard(p.before, p.after, p.label, p.category)).join('');
+        grid.innerHTML = catProjects.map(p => makeStaticCard(p.before, p.after, p.label, p.category, p.location)).join('');
       }
 
       // Add collage footer images for concrete
