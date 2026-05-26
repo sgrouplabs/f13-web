@@ -293,7 +293,7 @@
       </div>
 
       <!-- Fence Photo Grid 4x3 -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
         <div class="relative aspect-square rounded-xl overflow-hidden shadow-md group">
           <img src="images/gallery/IMG_6005.jpeg" alt="Fence staining" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </div>
@@ -318,6 +318,10 @@
         <div class="relative aspect-square rounded-xl overflow-hidden shadow-md group">
           <img src="images/gallery/IMG_6895.jpeg" alt="Fence staining" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </div>
+      </div>
+
+      <!-- See More -->
+      <div id="fence-more-photos" class="hidden grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         <div class="relative aspect-square rounded-xl overflow-hidden shadow-md group">
           <img src="images/gallery/IMG_6934.jpeg" alt="Fence staining" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </div>
@@ -331,6 +335,29 @@
           <img src="images/gallery/IMG_6939.jpeg" alt="Fence staining" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </div>
       </div>
+
+      <a href="#" onclick="toggleFenceMore(); return false;" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm mb-8 transition-colors">
+        <i class="fa-solid fa-plus" id="fence-more-icon"></i> <span id="fence-more-text">See more</span>
+      </a>
+
+      <script>
+        function toggleFenceMore() {
+          var el = document.getElementById('fence-more-photos');
+          var icon = document.getElementById('fence-more-icon');
+          var text = document.getElementById('fence-more-text');
+          if (el.classList.contains('hidden')) {
+            el.classList.remove('hidden');
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            text.textContent = 'See less';
+          } else {
+            el.classList.add('hidden');
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            text.textContent = 'See more';
+          }
+        }
+      </script>
 
       <div id="fence-grid" class="space-y-10"></div>
       <div class="mt-8 text-center">
