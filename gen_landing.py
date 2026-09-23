@@ -4,7 +4,7 @@ import json, os
 PUB = "/root/f13-web/public"
 PHONE_HREF = "tel:+12398224568"
 PHONE_TXT = "(239) 822-4568"
-SITE = "https://www.f13llc.com"
+SITE = "https://f13llc.com"
 
 CITIES = {
     "katy": {
@@ -300,12 +300,12 @@ for slug, c in CITIES.items():
 
 # sitemap
 urls = [
-    ("https://www.f13llc.com/", "1.0", "monthly"),
-    ("https://www.f13llc.com/attic-flooring.html", "0.9", "weekly"),
-    ("https://www.f13llc.com/fence-staining.html", "0.8", "monthly"),
-    ("https://www.f13llc.com/concrete-contractor.html", "0.8", "monthly"),
-    ("https://www.f13llc.com/gallery.html", "0.7", "monthly"),
-    ("https://www.f13llc.com/privacy-policy.html", "0.3", "yearly"),
+    ("https://f13llc.com/", "1.0", "monthly"),
+    ("https://f13llc.com/attic-flooring.html", "0.9", "weekly"),
+    ("https://f13llc.com/fence-staining.html", "0.8", "monthly"),
+    ("https://f13llc.com/concrete-contractor.html", "0.8", "monthly"),
+    ("https://f13llc.com/gallery.html", "0.7", "monthly"),
+    ("https://f13llc.com/privacy-policy.html", "0.3", "yearly"),
 ]
 for slug, c in CITIES.items():
     urls.append((f"{SITE}/{c['slug']}/", "0.8", "weekly"))
@@ -317,5 +317,5 @@ sm.append("</urlset>")
 with open(os.path.join(PUB, "sitemap.xml"), "w") as fh:
     fh.write("\n".join(sm) + "\n")
 with open(os.path.join(PUB, "robots.txt"), "w") as fh:
-    fh.write("User-agent: *\nAllow: /\nSitemap: https://www.f13llc.com/sitemap.xml\n")
+    fh.write("User-agent: *\nAllow: /\nSitemap: https://f13llc.com/sitemap.xml\n")
 print("wrote sitemap.xml + robots.txt")

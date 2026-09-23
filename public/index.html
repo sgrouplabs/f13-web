@@ -14,6 +14,7 @@
   <meta property="og:title" content="F13 LLC — Houston Specialty Contractor">
   <meta property="og:description" content="Expert craftsmanship for Houston homes. Attic flooring, fence staining, and small concrete work. Free estimates.">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://f13llc.com/">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -39,29 +40,7 @@
     }
   </script>
 
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Contractor",
-  "name": "F13 LLC",
-  "url": "https://www.f13llc.com",
-  "telephone": "+1-239-822-4568",
-  "description": "Trusted contracting servicing the Greater Houston area. We specialize in attic flooring, fence staining, and small concrete jobs.",
-  "openingHours": "Mo,Tu,We,Th,Fr 08:00-18:00",
-  "areaServed": [
-    { "@type": "City", "name": "Houston" },
-    { "@type": "City", "name": "Katy" },
-    { "@type": "City", "name": "Cypress" },
-    { "@type": "City", "name": "Spring" },
-    { "@type": "City", "name": "Pearland" }
-  ],
-  "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Attic Flooring Installation" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fence Staining" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Small Concrete Work" } }
-  ]
-}
-</script>
+
 
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
@@ -75,14 +54,15 @@
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Houston",
+    "addressLocality": "Katy",
     "addressRegion": "TX",
     "addressCountry": "US"
   },
+  "openingHours": "Mo,Tu,We,Th,Fr 08:00-18:00",
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 29.7604,
-    "longitude": -95.3698
+    "latitude": 29.7858,
+    "longitude": -95.8245
   },
   "areaServed": [
     {
@@ -104,6 +84,16 @@
       "@type": "City",
       "name": "Sugar Land",
       "sameAs": "https://en.wikipedia.org/wiki/Sugar_Land,_Texas"
+    },
+    {
+      "@type": "City",
+      "name": "Spring",
+      "sameAs": "https://en.wikipedia.org/wiki/Spring,_Texas"
+    },
+    {
+      "@type": "City",
+      "name": "Pearland",
+      "sameAs": "https://en.wikipedia.org/wiki/Pearland,_Texas"
     }
   ],
   "hasOfferCatalog": {
@@ -116,6 +106,22 @@
           "@type": "Service",
           "name": "Raised Attic Flooring Installation",
           "description": "Custom engineered raised subfloor systems installed above blown insulation for safe storage."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fence Staining",
+          "description": "Professional fence staining and sealing that protects wood from Houston humidity and UV damage."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Small Concrete Work",
+          "description": "Small concrete work including trash can pads, patios, and flatwork."
         }
       }
     ]
@@ -135,7 +141,7 @@
         <!-- Logo / Brand -->
         <a href="#" class="flex items-center gap-3 group">
           <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center shadow-md group-hover:bg-navy-700 transition-colors">
-            <img src="/brand/f13-logo-512px.png" alt="F13 LLC Logo" class="h-10 w-auto object-contain">
+            <img loading="lazy" decoding="async" src="/brand/f13-logo-512px.png" alt="F13 LLC Logo" class="h-10 w-auto object-contain">
           </div>
           <div class="hidden sm:block">
             <p class="text-navy-900 font-bold text-lg leading-none">F13 LLC</p>
@@ -344,11 +350,11 @@
         <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-shadow cursor-pointer">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-square overflow-hidden bg-gray-100">
-              <img src="images/gallery/attic-01-before.jpeg" alt="Attic Flooring — Before" class="w-full h-full object-cover">
+              <img loading="lazy" decoding="async" src="images/gallery/attic-01-before.webp" alt="Attic Flooring — Before" class="w-full h-full object-cover">
               <span class="absolute top-2 left-2 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">BEFORE</span>
             </div>
             <div class="relative aspect-square overflow-hidden bg-gray-100">
-              <img src="images/gallery/attic-01-after.jpeg" alt="Attic Flooring — After" class="w-full h-full object-cover">
+              <img loading="lazy" decoding="async" src="images/gallery/attic-01-after.webp" alt="Attic Flooring — After" class="w-full h-full object-cover">
               <span class="absolute top-2 right-2 bg-navy-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">AFTER</span>
             </div>
           </div>
@@ -367,11 +373,11 @@
         <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-shadow cursor-pointer">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-square overflow-hidden bg-gray-100">
-              <img src="images/gallery/fence-02-before.jpeg" alt="Fence Staining — Before" class="w-full h-full object-cover">
+              <img loading="lazy" decoding="async" src="images/gallery/fence-02-before.webp" alt="Fence Staining — Before" class="w-full h-full object-cover">
               <span class="absolute top-2 left-2 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">BEFORE</span>
             </div>
             <div class="relative aspect-square overflow-hidden bg-gray-100">
-              <img src="images/gallery/fence-02-after.jpeg" alt="Fence Staining — After" class="w-full h-full object-cover">
+              <img loading="lazy" decoding="async" src="images/gallery/fence-02-after.webp" alt="Fence Staining — After" class="w-full h-full object-cover">
               <span class="absolute top-2 right-2 bg-navy-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">AFTER</span>
             </div>
           </div>
@@ -390,11 +396,11 @@
         <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200 hover:shadow-xl transition-shadow cursor-pointer">
           <div class="grid grid-cols-2 gap-0.5">
             <div class="relative aspect-square overflow-hidden bg-gray-100">
-              <img src="images/gallery/concrete-02-before.jpeg" alt="Concrete Work — Before" class="w-full h-full object-cover">
+              <img loading="lazy" decoding="async" src="images/gallery/concrete-02-before.webp" alt="Concrete Work — Before" class="w-full h-full object-cover">
               <span class="absolute top-2 left-2 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">BEFORE</span>
             </div>
             <div class="relative aspect-square overflow-hidden bg-gray-100">
-              <img src="images/gallery/concrete-02-after.jpeg" alt="Concrete Work — After" class="w-full h-full object-cover">
+              <img loading="lazy" decoding="async" src="images/gallery/concrete-02-after.webp" alt="Concrete Work — After" class="w-full h-full object-cover">
               <span class="absolute top-2 right-2 bg-navy-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">AFTER</span>
             </div>
           </div>
@@ -549,8 +555,11 @@
       <p class="text-gray-500 mb-6">Fast, reliable service in these communities and surrounding areas:</p>
       <div class="flex flex-wrap justify-center gap-3">
         <span class="bg-white border border-slate-200 text-slate-700 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm">Houston</span>
-        <a href="attic-flooring/katy-tx/" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-400 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm transition-colors">Katy</a>
-        <a href="attic-flooring/cypress-tx/" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-400 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm transition-colors">Cypress</a>
+        <a href="fence-staining/katy-tx/" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-400 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm transition-colors">Fence Staining Katy, TX</a>
+        <a href="fence-staining/cypress-tx/" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-400 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm transition-colors">Fence Staining Cypress, TX</a>
+        <a href="fence-staining/sugar-land-tx/" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-400 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm transition-colors">Fence Staining Sugar Land, TX</a>
+        <a href="attic-flooring/katy-tx/" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-400 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm transition-colors">Attic Flooring Katy</a>
+        <a href="attic-flooring/cypress-tx/" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-400 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm transition-colors">Attic Flooring Cypress</a>
         <span class="bg-white border border-slate-200 text-slate-700 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm">Spring</span>
         <span class="bg-white border border-slate-200 text-slate-700 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm">Pearland</span>
         <span class="bg-white border border-slate-200 text-slate-700 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm">Richmond</span>
@@ -572,7 +581,7 @@
         <div>
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 bg-navy-700 rounded-lg flex items-center justify-center">
-              <img src="/brand/f13-logo-512px.png" alt="F13 LLC Logo" class="h-10 w-auto object-contain">
+              <img loading="lazy" decoding="async" src="/brand/f13-logo-512px.png" alt="F13 LLC Logo" class="h-10 w-auto object-contain">
             </div>
             <div>
               <p class="text-white font-bold text-lg leading-none">F13 LLC</p>
