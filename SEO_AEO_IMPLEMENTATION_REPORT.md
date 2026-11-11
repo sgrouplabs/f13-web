@@ -2,7 +2,7 @@
 
 **Repo:** https://github.com/sgrouplabs/f13-web
 **Production branch:** `main` @ `2f35348`
-**Working branch:** `feature/f13-seo-aeo-overhaul` @ `a1f2515`
+**Working branch:** `feature/f13-seo-aeo-overhaul` @ `0b1c1c3` (current HEAD — `a1f2515` is HEAD~1, the last code commit; redirect tests below ran against that code state, identical except for this report file)
 **Status:** All repository-controlled work implemented & tested. Nothing merged/deployed. Production & Cloudflare untouched.
 
 ---
@@ -25,7 +25,7 @@
 | `server.js` | Added 301 trailing-slash redirects for city/service pages + `/dir/index.html` → `/dir/` |
 | 6 × city pages (`fence-staining` + `attic-flooring` × Katy/Cypress/Sugar Land) | Resolved `{city}` and `{community_chips}` placeholders with real city names + real neighborhoods (visible text + FAQ JSON-LD) |
 
-### Commit 2 — `a1f2515`
+### Commit 2 — `a1f2515` (all code changes)
 | File | Change |
 |---|---|
 | `public/attic-flooring/katy-tx/index.html` | Keyword-leading title/meta; BreadcrumbList JSON-LD added |
@@ -76,7 +76,7 @@ Meta descriptions rewritten on the two attic pages to lead with "Attic flooring 
 
 **No PageSpeed scores claimed** — no measurement environment available in this repo context.
 
-## F. Redirect Tests (exact, from local Express server, commit `a1f2515`)
+## F. Redirect Tests (exact, from local Express server, code state `a1f2515` = current HEAD minus this report)
 
 | Request | HTTP Status | `Location` Header | Final (follow) |
 |---|---|---|---|
@@ -92,6 +92,7 @@ Meta descriptions rewritten on the two attic pages to lead with "Attic flooring 
 
 **Passed**
 - 40/40 JSON-LD blocks valid JSON
+- Semantic schema check: breadcrumb positions sequential & start at 1; all breadcrumb destinations on f13llc.com; every FAQPage question has an acceptedAnswer; every HomeAndConstructionBusiness has name/url/telephone — **0 semantic issues** across 16 pages (scripted structural validation; visual Rich Results Test still recommended post-deploy)
 - 0 broken internal links (16 pages crawled by link checker)
 - 0 unresolved `{city}` / `{community_chips}` placeholders
 - All 13 key routes return expected codes (200/301) with exact Location headers verified
@@ -123,6 +124,11 @@ Meta descriptions rewritten on the two attic pages to lead with "Attic flooring 
 
 ## J. Deployment & Rollback
 
-**Deploy (after owner approval):** merge compare-link PR → on IONOS VPS: `git pull origin main` → restart the F13 node service → curl-verify the 13 tested routes.
+**Deploy (after owner approval) — staging process notes:**
+1. f13llc.com runs on the **IONOS VPS** (not the qzen host) — service manager there must be identified before deploy (likely systemd or pm2; check `systemctl list-units | grep -i f13` / `pm2 ls` on the IONOS box)
+2. Before pull: `git status` on the VPS repo — if uncommitted production changes exist, stash them to a branch first (don't discard)
+3. **Env/config backup before deploy** (repo bundle does NOT cover these): copy `.env`, any nginx/caddy config, and `pm2 save`/systemd unit files to a backup dir on the VPS
+4. Then: `git pull origin main` → restart service → curl-verify the 13 tested routes
+5. **Tested rollback:** `git checkout backup-before-seo-2026-11-10` + restore the pre-deploy `.env`/config backups + restart
 **Rollback:** `git checkout backup-before-seo-2026-11-10` on the VPS and restart, or restore the repo from `/root/f13-backups/f13-web-preseo-2026-11-10.bundle`.
 **Post-deploy verification:** check exact `Location` headers (table F) in production, confirm city pages render neighborhoods + breadcrumbs in Rich Results Test.
