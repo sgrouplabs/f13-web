@@ -2,7 +2,7 @@
 
 **Repo:** https://github.com/sgrouplabs/f13-web
 **Production branch:** `main` @ `2f35348`
-**Working branch:** `feature/f13-seo-aeo-overhaul` @ `0b1c1c3` (current HEAD — `a1f2515` is HEAD~1, the last code commit; redirect tests below ran against that code state, identical except for this report file)
+**Working branch:** `feature/f13-seo-aeo-overhaul` @ `a0eede3` (current HEAD). Last code commit: `a1f2515` — all redirect/schema tests ran against that code state; commits after it are documentation-only (this report).
 **Status:** All repository-controlled work implemented & tested. Nothing merged/deployed. Production & Cloudflare untouched.
 
 ---
