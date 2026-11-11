@@ -1,93 +1,128 @@
-# F13 LLC — SEO/AEO Implementation Report (Phase 1–2)
+# F13 LLC — SEO/AEO Implementation Report (Phases 1–7)
 
-**Date:** 2026-11-11
 **Repo:** https://github.com/sgrouplabs/f13-web
 **Production branch:** `main` @ `2f35348`
-**Working branch:** `feature/f13-seo-aeo-overhaul` @ `1917d02`
+**Working branch:** `feature/f13-seo-aeo-overhaul` @ `a1f2515`
+**Status:** All repository-controlled work implemented & tested. Nothing merged/deployed. Production & Cloudflare untouched.
 
 ---
 
-## A. Backup Information
+## A. Backup Information (re-verified after all changes)
 
 | Item | Value |
 |---|---|
 | Original branch / commit | `main` @ `2f35348a1baccd88dd70fd00b6aab1da0724ad71` |
-| Backup branch | `backup/pre-seo-overhaul-2026-11-10` (pushed to origin) |
-| Backup tag | `backup-before-seo-2026-11-10` (annotated, pushed) |
+| Backup branch | `backup/pre-seo-overhaul-2026-11-10` (local + origin, intact) |
+| Backup tag | `backup-before-seo-2026-11-10` (annotated, intact) |
 | Bundle backup | `/root/f13-backups/f13-web-preseo-2026-11-10.bundle` — `git bundle verify` = **complete history, recoverable** |
-| Working branch | `feature/f13-seo-aeo-overhaul` (pushed) |
-| Uncommitted changes | None found at start (clean tree) |
+| Working branch | `feature/f13-seo-aeo-overhaul` (pushed to origin) |
 
-Recovery: `git clone f13-web-preseo-2026-11-10.bundle -b main` or `git fetch /root/f13-backups/... main:restored-main`.
+## B. Files Modified (every file + reason)
 
-## B. Files Modified (7)
-
-| File | Purpose |
+### Commit 1 — `1917d02`
+| File | Change |
 |---|---|
-| `server.js` | Added trailing-slash 301 redirects for city/service pages + `/dir/index.html` → `/dir/` canonicalization |
-| `public/fence-staining/katy-tx/index.html` | `{city}` → "Katy"; `{community_chips}` → 8 real Katy neighborhoods (Cinco Ranch, Elyson, Cane Island, Firethorne, Seven Meadows, Grand Lakes, Katy Brookshire, Williamsburg Reserve) |
-| `public/fence-staining/cypress-tx/index.html` | Same for Cypress (Bridgeland, Coles Crossing, Fairfield, Towne Lake, Cypress Creek Lakes, Vintage Park, Cypress Mill, Fry Road Corridor) |
-| `public/fence-staining/sugar-land-tx/index.html` | Same for Sugar Land (First Colony, Riverstone, Telfair, Sweetwater, New Territory, Greatwood, Lake Pointe, Avalon) |
-| `public/attic-flooring/katy-tx/index.html` | `{city}` / `{community_chips}` resolved |
-| `public/attic-flooring/cypress-tx/index.html` | Resolved |
-| `public/attic-flooring/sugar-land-tx/index.html` | Resolved |
+| `server.js` | Added 301 trailing-slash redirects for city/service pages + `/dir/index.html` → `/dir/` |
+| 6 × city pages (`fence-staining` + `attic-flooring` × Katy/Cypress/Sugar Land) | Resolved `{city}` and `{community_chips}` placeholders with real city names + real neighborhoods (visible text + FAQ JSON-LD) |
 
-## C. SEO Improvements Implemented
+### Commit 2 — `a1f2515`
+| File | Change |
+|---|---|
+| `public/attic-flooring/katy-tx/index.html` | Keyword-leading title/meta; BreadcrumbList JSON-LD added |
+| `public/attic-flooring/cypress-tx/index.html` | Same |
+| `public/attic-flooring/sugar-land-tx/index.html` | BreadcrumbList JSON-LD added |
+| `public/fence-staining/katy-tx/index.html` | Keyword-leading title; BreadcrumbList added |
+| `public/fence-staining/cypress-tx/index.html` | Keyword-leading title; BreadcrumbList added; chips corrected (Lakewood Forest, Stone Gate) |
+| `public/fence-staining/sugar-land-tx/index.html` | BreadcrumbList added |
+| 4 × `concrete/trash-can-pad-installation/*` | Tel href canonicalization consistency check (no content change needed beyond placeholders commit) |
+| `public/images/gallery/concrete-04-after-collage.png` | **Deleted** — unreferenced orphan, 2.3 MB |
+| `public/images/gallery/concrete-05-after-collage.png` | **Deleted** — unreferenced orphan, 2.4 MB |
 
-- **Redirect fix (GSC "Redirect error")**: `/attic-flooring/katy-tx` → 301 → `/attic-flooring/katy-tx/` (200). Also applies to all attic/fence/concrete city pages and `/dir/index.html` variants.
-- **Placeholder elimination**: no `{city}` or `{community_chips}` template vars remain anywhere in `public/` (grep-verified). FAQ JSON-LD and visible summaries now carry real city names — also fixes AEO FAQ answers.
-- **Neighborhood chips**: real, city-specific neighborhoods replace the unresolved chips — improves local relevance signals.
+**Net repo size:** −4.6 MB.
 
-## D. Technical Fixes — Problem Disposition
+## C. SEO Improvements
 
-### Fixed in GitHub (this PR)
-- `/attic-flooring/katy-tx` redirect error → origin-level 301 (was 404 at origin)
-- City-page placeholder defects
+### Before/After Titles & Meta Descriptions
 
-### Verified already OK (historical GSC errors)
-- `https://f13llc.com/fence-staining/cypress-tx/` → **200 OK** live (403 historical)
-- `https://f13llc.com/fence-staining.html` → **200 OK** live (403 historical)
-- All canonical tags already `https://f13llc.com` (no-www) — no changes needed
-- `robots.txt` + `sitemap.xml` already clean; every sitemap URL returns 200
+| Page | Before → After |
+|---|---|
+| Attic Katy | `Professional Attic Flooring & Storage Systems in Katy, TX \| F13 LLC` → **`Attic Flooring Katy TX \| Raised Attic Storage Floors \| F13 LLC`** |
+| Attic Cypress | `Professional Attic Flooring & Storage Systems in Cypress, TX \| F13 LLC` → **`Attic Flooring Cypress TX \| Raised Attic Storage Floors \| F13 LLC`** |
+| Fence Katy | `Fence Staining in Katy, TX \| F13 LLC — Stain & Seal Wood Fences` → **`Fence Staining Katy TX \| Stain & Seal Wood Fences \| F13 LLC`** |
+| Fence Cypress | `Fence Staining in Cypress, TX \| F13 LLC — Stain & Seal Wood Fences` → **`Fence Staining Cypress TX \| Stain & Seal Wood Fences \| F13 LLC`** |
 
-### Requires Cloudflare-side change (outstanding — owner task)
-- `https://www.f13llc.com/` and `http://www.f13llc.com/` → **404**. Needs a www→apex redirect rule (Bulk Redirect or Page Rule on the `www.f13llc.com` hostname). **Cannot be fixed in the repo.** Not attempted per instructions.
-- If fence-staining 403s recur in GSC after a fresh crawl, check Cloudflare WAF security events.
+Meta descriptions rewritten on the two attic pages to lead with "Attic flooring in Katy/Cypress TX engineered over blown-in insulation…", naming real neighborhoods + free-estimate CTA. All other city pages already had unique, city-specific H1/H2s and intro copy ("Built for Katy/Cypress/Sugar Land Weather" — verified distinct, not doorway content).
 
-### Flagged for owner (not changed)
-- **Concrete PSI conflict**: `concrete-contractor.html` says "minimum 4,000 PSI for all our concrete work"; trash-can-pad pages say 3,500 PSI (4-inch slab). Plausible reconciliation: pads = 4" 3,500 PSI, heavier work = 4,000+. Owner to confirm before any wording change.
+### Internal Links
+- Full audit: **0 broken internal links** across all 16 pages.
+- Service-area links all resolve; no non-slash city URLs referenced anywhere in content.
+- "Attic floor installation near me" intent covered by homepage + service hubs with city links in footers.
 
-## E. Tomorrow's Cloudflare Checklist
-1. Add redirect rule: `www.f13llc.com/*` → `https://f13llc.com/$1` (301, preserve path+query)
-2. Confirm tunnel ingress routes for f13llc.com are intact
-3. Review WAF/security events if fence-staining 403s persist
-4. Validate HTTPS + apex/www behavior end-to-end
-5. Final URL response test for all GSC-flagged URLs
+## D. Structured Data (AEO)
 
-## F. Google Search Console Checklist
-1. URL Inspection (live test) on the 5 flagged URLs
-2. Re-submit `https://f13llc.com/sitemap.xml`
-3. Request re-indexing of fixed city pages
-4. Validate the "Redirect error" as fixed
-5. Monitor Performance over 2 weeks
+- **40 JSON-LD blocks total** (29 original + 6 new BreadcrumbList + 5 already in concrete pages), **all parse as valid JSON** (validated twice, after each edit batch).
+- Existing types audited: `HomeAndConstructionBusiness` (all city pages, w/ geo + areaServed City links to Wikipedia), `Service`, `FAQPage` (4–5 Qs each, no duplicate Qs across pages), `BreadcrumbList` (concrete pages originally; now attic + fence city pages too), `Contractor` (gallery).
+- **No `LocalBusiness` aggregate `ratingValue`/`reviewCount` fabricated** — none present, correct per no-invented-facts rule.
+- Gaps intentionally left for owner input: verified phone in schema (currently schema shows `+1-239-822-4568` matching displayed number — owner confirm), no street address invented.
 
-## G. Testing Results
-- ✅ All 29 JSON-LD blocks parse as valid JSON
-- ✅ Local server (port 3999): 13 route tests — all expected codes:
-  - `/attic-flooring/katy-tx` 301 → `/`; trailing slash 200; `/index.html` 301 → `/`
-  - all city pages, gallery, privacy, sitemap, robots = 200
-- ✅ Zero remaining placeholders (grep-verified)
-- ✅ No build/lint/typecheck scripts exist in this project (plain Express static site) — npm start verified
-- ⚠️ PR creation **blocked**: fine-grained PAT lacks PR-write scope (403). Branch is pushed; open manually:
+## E. Performance
+
+| Change | Detail |
+|---|---|
+| Orphaned images removed | 2 × 2.3 MB PNG collages deleted (unreferenced) |
+| Lazy loading | Already `loading="lazy" decoding="async"` on all below-fold gallery images (index: 8, gallery: 32) — verified, no critical hero image lazy-loaded |
+| Fonts | Google Fonts with `preconnect` already present |
+| Not performed | WebP re-encode of remaining images (all gallery images already WebP), width/height attributes (Tailwind utility classes already size containers; risk of CLS regression without visual QA), CDN/script changes (would alter site behavior) |
+
+**No PageSpeed scores claimed** — no measurement environment available in this repo context.
+
+## F. Redirect Tests (exact, from local Express server, commit `a1f2515`)
+
+| Request | HTTP Status | `Location` Header | Final (follow) |
+|---|---|---|---|
+| `GET /attic-flooring/katy-tx` | **301** | **`/attic-flooring/katy-tx/`** (raw header verified — NOT `/`) | `…/attic-flooring/katy-tx/` → **200** |
+| `GET /attic-flooring/katy-tx/` | **200** | — | — |
+| `GET /fence-staining/cypress-tx` | **301** | `/fence-staining/cypress-tx/` | → **200** |
+| `GET /index.html` | **301** | `/` | → **200** |
+| `GET /` | **200** | — | — |
+
+*Earlier report ambiguity resolved: the "301 → /" line referred to the separate `/index.html` → `/` rule. The Katy service-page redirect targets the trailing-slash service page, proven above.*
+
+## G. Tests Passed / Failed / Not Performed
+
+**Passed**
+- 40/40 JSON-LD blocks valid JSON
+- 0 broken internal links (16 pages crawled by link checker)
+- 0 unresolved `{city}` / `{community_chips}` placeholders
+- All 13 key routes return expected codes (200/301) with exact Location headers verified
+- Backup branch + tag + bundle verified intact post-work
+- Gallery images all WebP with lazy-load + async decode
+
+**Failed / Blocked**
+- GitHub PR creation: fine-grained PAT lacks PR-write scope (403 "Resource not accessible"). Branch is pushed; open the PR manually:
   **https://github.com/sgrouplabs/f13-web/compare/main...feature/f13-seo-aeo-overhaul**
-  (Issue #1 created in the repo documenting this.)
 
-## H. Deployment & Rollback
-**Deploy (owner-approved only):** merge PR → pull `main` on IONOS VPS → restart the f13 service (supervisor/systemd unit already runs `node server.js`).
-**Rollback:** `git checkout backup-before-seo-2026-11-10` and restart, or restore from the bundle file.
-**Verify after deploy:** curl the 5 GSC URLs + spot-check a city page for rendered neighborhoods.
+**Not Performed (with reasons)**
+- Image width/height attributes — needs visual QA pass to avoid CLS regression
+- PageSpeed/Lighthouse measurement — no browser/CI environment wired to this repo
+- `www.f13llc.com` redirect — Cloudflare-side, prohibited in this run
+- Production restart/deploy — prohibited in this run
 
-## Remaining Owner Inputs Needed
-1. PSI reconciliation (4,000 vs 3,500) — confirm or correct
-2. Verified phone number (footer tel links display a partially masked number)
-3. Approval to proceed with Phase 4–6 (schema expansion, meta refresh, image optimization)
+## H. Remaining Cloudflare & IONOS Actions (owner tasks)
+
+1. **Redirect rule:** `www.f13llc.com/*` → `https://f13llc.com/$1` (301, preserve path+query) — fixes both `www` 404s from GSC
+2. Re-verify `fence-staining` 403s are truly historical in WAF security events
+3. Post-deploy: re-crawl the 5 GSC-flagged URLs, validate sitemap
+
+## I. Business Information Requiring Owner Approval
+
+1. **PSI conflict:** `concrete-contractor.html` "minimum 4,000 PSI" vs trash-can-pad pages "3,500 PSI (4-inch slab)" — reconcile wording
+2. **Phone number:** displayed number is `(239) 822-4568` everywhere; schema + tel: hrefs now match it — **verify it's the correct/verified number**
+3. **Homepage trust claims:** "38 Years", "5★ Google Rating", "100% Satisfaction", "guaranteed 1-year workmanship" — existing content left untouched; **provide proof or approve edits/removal**
+4. **Testimonial** ("400 sqft attic…") — existing content; confirm authenticity or remove
+
+## J. Deployment & Rollback
+
+**Deploy (after owner approval):** merge compare-link PR → on IONOS VPS: `git pull origin main` → restart the F13 node service → curl-verify the 13 tested routes.
+**Rollback:** `git checkout backup-before-seo-2026-11-10` on the VPS and restart, or restore the repo from `/root/f13-backups/f13-web-preseo-2026-11-10.bundle`.
+**Post-deploy verification:** check exact `Location` headers (table F) in production, confirm city pages render neighborhoods + breadcrumbs in Rich Results Test.
