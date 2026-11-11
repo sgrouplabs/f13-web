@@ -11,6 +11,20 @@ app.use(express.json());
 // Canonicalize /index.html -> / (must precede static)
 app.get('/index.html', (req, res) => res.redirect(301, '/'));
 
+// Canonicalize non-trailing-slash city/service pages -> trailing slash (301)
+app.get(['/:seg(attic-flooring|fence-staining|concrete)/*', '/:seg(attic-flooring|fence-staining)'], (req, res, next) => {
+  if (req.path.endsWith('/') || req.path.endsWith('/index.html')) return next();
+  res.redirect(301, req.path + '/');
+});
+
+// Strip index.html inside directories -> canonical directory URL (301)
+app.get('*', (req, res, next) => {
+  if (req.path !== '/index.html' && req.path.endsWith('/index.html')) {
+    return res.redirect(301, req.path.replace(/index\.html$/, ''));
+  }
+  next();
+});
+
 app.use(express.static('public', { redirect: false }));
 
 app.use('/api', apiRouter);
